@@ -1,10 +1,13 @@
 package com.tuyano.springboot;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.annotationRequestMapping;
-public class HeloController {
-	
-	@Controller
-	public cloass HeloCont
+import org.springframework.web.bind.annotation.RequestMapping;
 
-}
+@Controller
+public class HeloController {
+	 
+	 @RequestMapping("/")
+	 public String index() {
+		 return "index";
+	 }
+ }
