@@ -10,7 +10,7 @@
    </style>
    </head>
    <body>
-   <h1>Helo page</h1>
-   <p th:text="${new java.util.Date().toString()}"></p>
+   <h1 th:text="#{content.title}">Helo page</h1>
+   <p><a th:gref="@{'/home/{id}'(id=${parame.id[0])}">link</a></p>
    </body>
    </html>
