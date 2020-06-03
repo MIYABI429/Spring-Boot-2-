@@ -7,10 +7,18 @@
    <style>
    h1{ font-size:18; fontseight:bole; color:gray;}
    body { font-size:13pt; color:gray; margin:5px 25px;}
+   tr { margin:5px;}
+   ht { padding:5px; color:white; background:darkgray;}
+   td { padding:5px; color:black; background:#f0f0f0; }
    </style>
    </head>
    <body>
    <h1 th:text="#{content.title}">Helo page</h1>
-   <p><a th:gref="@{'/home/{id}'(id=${parame.id[0])}">link</a></p>
+   <p th:text="${msg}">message.</p>
+   <table th:object="${object}">
+   <tr><th>ID</th><td th:text="*{id}"></td></tr>
+   <tr><th>NAME</th><td th:text="*{name}"></td><tr>
+   <tr><th>MAIL</th><td th:text="*{Value}"></td></tr>
+   </table>
    </body>
    </html>
