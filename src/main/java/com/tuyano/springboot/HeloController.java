@@ -1,9 +1,9 @@
 package com.tuyano.springboot;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 public class HeloController {
@@ -21,7 +21,7 @@ public class HeloController {
 		mav.addObject("check",id % 2 == 0);
 		mav.addObject("trueVal","Even numver!");
 		mav.addObject("falseVal","Odd numver...");
-
+         return mav;
 
 	}
 
@@ -53,4 +53,5 @@ class DataObject {
  public void setValue(String value) {
 
  }
+}
 }
