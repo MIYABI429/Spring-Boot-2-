@@ -3,6 +3,7 @@ package com.tuyano.springboot;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 public class HeloController {
@@ -13,13 +14,17 @@ public class HeloController {
 			"hanako@flower","taro@yamda",
 			"sachiko@happy","ichiro@baseball"};
 
-	@RequestMapping("/")
-	public ModelAndView index(ModelAndView mav) {
+	@RequestMapping("/{id}")
+	public ModelAndView index(@PathVariable int id, ModelAndView mav) {
 		mav.setViewName("index");
-		mav.addObject("msg","message 1<hr/>message 2<vr/>message 3");
-		return mav;
+		mav.addObject("id",id);
+		mav.addObject("check",id % 2 == 0);
+		mav.addObject("trueVal","Even numver!");
+		mav.addObject("falseVal","Odd numver...");
+
+
 	}
-}
+
 
 class DataObject {
 	private int id;
