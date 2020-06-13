@@ -7,13 +7,15 @@
    <style>
    h1{ font-size:18pt; fontseight:bole; color:gray;}
    body { font-size:13pt; color:gray; margin:5px 25px;}
+   pre { border: solid 3px #ddd; padding: 10px;}}
    </style>
+   </head>
    <style th:include="part :: frag_style"></style>
    </head>
+
    <body>
    <h1 th:text="#{content.title}">Helo page</h1>
-   <div th:include="part :: frag_body">
-     <p>this is orginal content.</p>
-   </div>
+   <pre th:text="${data}"></pre>
    </body>
+
    </html>
